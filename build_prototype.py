@@ -26,3 +26,12 @@ html = f"""<title>Ciclora EHS Protótipo</title>
 out = os.path.join(BASE, "docs", "prototipo", "ciclora-prototipo.html")
 open(out, "w", encoding="utf-8").write(html)
 print(out, len(html) // 1024, "KB")
+
+# versão completa para GitHub Pages (pasta /docs → https://<usuario>.github.io/ciclora-ehs/)
+page = ('<!doctype html>\n<html lang="pt-BR"><head><meta charset="utf-8">'
+        '<meta name="viewport" content="width=device-width, initial-scale=1">'
+        '<link rel="icon" href="favicon.svg" type="image/svg+xml">\n' + html + '\n</head><body></body></html>')
+page = page.replace("<script>if (document.readyState", "<script>/*ready*/if (document.readyState")
+idx = os.path.join(BASE, "docs", "index.html")
+open(idx, "w", encoding="utf-8").write(page)
+print(idx)

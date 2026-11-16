@@ -17,14 +17,16 @@ A plataforma centraliza a gestão de resíduos de uma indústria de grande porte
 
 ---
 
+**Versão navegável (GitHub Pages):** https://eduardocavalli85.github.io/Ciclora-EHS/ — protótipo com dados de demonstração, sem servidor.
+
 ## Como executar localmente
 
 **Pré-requisito:** Python 3.10 ou superior ([python.org](https://www.python.org/downloads/)). No Windows, marque “Add Python to PATH” na instalação.
 
 ```bash
 # 1. clonar o repositório
-git clone https://github.com/<organizacao>/ciclora-ehs.git
-cd ciclora-ehs
+git clone https://github.com/eduardocavalli85/Ciclora-EHS.git
+cd Ciclora-EHS
 
 # 2. (opcional) criar ambiente virtual
 python -m venv .venv
@@ -77,7 +79,7 @@ Na primeira execução é criado o banco `ciclora.db` (SQLite) com dados de demo
 ### Estrutura de pastas
 
 ```
-ciclora-ehs/
+Ciclora-EHS/
 ├── app.py                 # servidor Flask + API REST
 ├── database.py            # esquema do banco e dados de demonstração
 ├── requirements.txt

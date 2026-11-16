@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>Ciclora – Wireframes (baixa fidelidade)</title>
+<style>
+  body { margin: 0; background: #ECECEC; font-family: "DejaVu Sans Mono", "Courier New", monospace; color: #333; }
+  .wf { width: 1200px; height: 760px; background: #fff; margin: 30px auto; border: 2px solid #444; display: grid; grid-template-columns: 190px 1fr; position: relative; }
+  .tag { position: absolute; top: -26px; left: 0; font-size: 15px; font-weight: bold; }
+  .side { border-right: 2px solid #444; padding: 16px 12px; display: flex; flex-direction: column; gap: 10px; background: #F4F4F4; }
+  .logo { height: 40px; border: 2px solid #444; display: grid; place-items: center; font-size: 12px; }
+  .nav { height: 28px; border: 1.5px solid #888; display: flex; align-items: center; padding: 0 8px; font-size: 12px; }
+  .nav.on { background: #CFCFCF; border-color: #444; font-weight: bold; }
+  .main { display: flex; flex-direction: column; }
+  .top { height: 58px; border-bottom: 2px solid #444; display: flex; align-items: center; justify-content: space-between; padding: 0 18px; font-size: 14px; }
+  .pill { border: 1.5px solid #444; border-radius: 20px; padding: 5px 12px; font-size: 11px; }
+  .c { padding: 16px 18px; display: flex; flex-direction: column; gap: 12px; flex: 1; }
+  .row { display: flex; gap: 12px; }
+  .box { border: 1.5px solid #666; padding: 8px 10px; font-size: 11px; flex: 1; position: relative; }
+  .box b { display: block; font-size: 12px; margin-bottom: 4px; }
+  .kpi { height: 66px; }
+  .kpi .n { font-size: 22px; font-weight: bold; }
+  .chart { background: repeating-linear-gradient(45deg, #fff, #fff 8px, #F0F0F0 8px, #F0F0F0 10px); }
+  .x { position: absolute; inset: 26px 10px 10px; border: 1px dashed #999; }
+  .x::before, .x::after { content: ""; position: absolute; left: 0; right: 0; top: 50%; border-top: 1px solid #BBB; transform: rotate(14deg); }
+  .x::after { transform: rotate(-14deg); }
+  .tbl { display: grid; font-size: 11px; border: 1.5px solid #666; }
+  .tbl div { border-bottom: 1px solid #BBB; padding: 7px 8px; display: grid; gap: 8px; }
+  .tbl div:first-child { background: #E6E6E6; font-weight: bold; }
+  .btn { border: 2px solid #333; padding: 5px 12px; font-size: 11px; display: inline-block; background: #DDD; font-weight: bold; }
+  .btn.o { background: #fff; border-width: 1.5px; }
+  .in { border: 1.5px solid #888; height: 26px; font-size: 10.5px; display: flex; align-items: center; padding: 0 6px; color: #777; }
+  .lbl { font-size: 10.5px; margin-bottom: 3px; }
+  .note { position: absolute; background: #FFF6B0; border: 1px solid #C9B94A; font-size: 10.5px; padding: 6px 8px; width: 170px; font-family: "DejaVu Sans", sans-serif; transform: rotate(-1.5deg); box-shadow: 2px 2px 0 rgba(0,0,0,.08); }
+  .bar { height: 10px; background: #999; margin: 4px 0 8px; }
+  .steps { display: flex; gap: 8px; }
+  .steps div { flex: 1; border: 1.5px solid #666; padding: 8px; font-size: 11px; }
+  .steps div.on { border-width: 2.5px; border-color: #222; }
+  .drop { border: 2px dashed #777; height: 90px; display: grid; place-items: center; font-size: 11px; }
+  .modal { position: absolute; inset: 70px 120px auto 300px; border: 2.5px solid #222; background: #fff; box-shadow: 8px 8px 0 rgba(0,0,0,.15); padding: 14px; display: flex; flex-direction: column; gap: 10px; }
+  .dim { position: absolute; inset: 0; background: rgba(0,0,0,.18); }
+  .g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+</style></head><body>
+
+<!-- 1 DASHBOARD -->
+<section class="wf" id="w1"><div class="tag">WF-01 · Dashboard (Gestor EHS)</div>
+  <div class="side"><div class="logo">[LOGO]</div><div class="nav on">▣ Dashboard</div><div class="nav">▣ Parceiros</div><div class="nav">▣ Resíduos</div><div class="nav">▣ MTR</div><div class="nav">▣ Financeiro</div><div style="flex:1"></div><div class="box" style="flex:none;height:60px">Cliente: Montadora<br>Unidade</div></div>
+  <div class="main"><div class="top"><span><b>Dashboard de gestão de resíduos</b><br><small>Montadora · planta</small></span><span><span class="pill">Gestor EHS</span> <span class="pill">Portal Parceiro</span></span></div>
+    <div class="c">
+      <div class="row" style="font-size:11px">Período: [4 sem] [12 sem] [Tudo]</div>
+      <div class="row"><div class="box kpi"><b>Gerado (t)</b><span class="n">000</span></div><div class="box kpi"><b>% Valorização</b><span class="n">00%</span></div><div class="box kpi"><b>Saldo R$</b><span class="n">R$ 0</span></div><div class="box kpi"><b>% Classe I</b><span class="n">00%</span></div></div>
+      <div class="row"><div class="box kpi"><b>Custo / t</b><span class="n">R$</span></div><div class="box kpi"><b>MTRs</b><span class="n">00</span></div><div class="box kpi"><b>Docs vencidos</b><span class="n">0</span></div><div class="box kpi"><b>Parceiros homolog.</b><span class="n">0</span></div></div>
+      <div class="row" style="flex:1"><div class="box chart" style="flex:2"><b>Gráfico: geração semanal por classe (colunas empilhadas)</b><div class="x"></div></div><div class="box"><b>Alertas de conformidade</b><div class="in">⚠ doc. vencido · [Ver]</div><br><div class="in">⏱ LO vence em X dias · [Ver]</div><br><div class="in">⏱ MTR sem CDF · [Ver]</div></div></div>
+      <div class="row" style="height:150px"><div class="box chart"><b>Destinação (barras)</b><div class="x"></div></div><div class="box chart"><b>Top resíduos</b><div class="x"></div></div><div class="box chart"><b>Receita × custo / mês</b><div class="x"></div></div></div>
+    </div></div>
+  <div class="note" style="right:-60px;top:200px">KPIs no topo: o gestor precisa ver o "resumo" em 5 segundos (entrevista).</div>
+</section>
+
+<!-- 2 PARCEIROS -->
+<section class="wf" id="w2"><div class="tag">WF-02 · Parceiros – lista e análise de documentos</div>
+  <div class="side"><div class="logo">[LOGO]</div><div class="nav">▣ Dashboard</div><div class="nav on">▣ Parceiros</div><div class="nav">▣ Resíduos</div><div class="nav">▣ MTR</div><div class="nav">▣ Financeiro</div></div>
+  <div class="main"><div class="top"><b>Parceiros e destinadores</b><span class="pill">Gestor EHS</span></div>
+    <div class="c">
+      <div class="row"><div class="box kpi"><b>Homologados</b><span class="n">0</span></div><div class="box kpi"><b>Em análise</b><span class="n">0</span></div><div class="box kpi"><b>Rascunho</b><span class="n">0</span></div><div class="box kpi"><b>Docs c/ alerta</b><span class="n">0</span></div></div>
+      <div class="row" style="justify-content:space-between;font-size:11px"><span>[Todos][Homologado][Em análise][Rascunho]</span><span class="btn">+ Novo parceiro</span></div>
+      <div class="tbl">${'x'}</div>
+    </div></div>
+  <div class="dim"></div>
+  <div class="modal"><b style="font-size:13px">Razão social do parceiro  [status]</b>
+    <div class="g2" style="font-size:11px"><span>CNPJ: __________</span><span>Tipo: __________</span><span>Atividade: ______</span><span>Contato: ________</span></div>
+    <div class="tbl" id="t2b"></div>
+    <div class="lbl">Parecer / observação</div><div class="in" style="height:40px"></div>
+    <div style="text-align:right"><span class="btn o">Reprovar</span> <span class="btn">✓ Homologar parceiro</span></div>
+  </div>
+  <div class="note" style="right:-60px;top:330px">Só homologa se todos os docs obrigatórios estiverem aprovados.</div>
+</section>
+
+<!-- 3 PORTAL -->
+<section class="wf" id="w3"><div class="tag">WF-03 · Portal do Parceiro – envio de documentos</div>
+  <div class="side"><div class="logo">[LOGO]</div><div class="nav">▣ Meu cadastro</div><div class="nav on">▣ Documentos</div></div>
+  <div class="main"><div class="top"><b>Portal do Parceiro · Documentos</b><span class="pill">Portal Parceiro</span></div>
+    <div class="c">
+      <div class="box" style="flex:none">ⓘ Banner de status do cadastro (Rascunho / Em análise / Homologado)</div>
+      <div class="steps"><div>① Dados da empresa ✓</div><div class="on">② Documentos</div><div>③ Enviar p/ cliente</div><div>④ Homologação</div></div>
+      <div class="row" style="flex:1">
+        <div class="box" style="flex:2"><b>Documentos obrigatórios</b><div class="tbl" id="t3"></div><br><div style="text-align:right"><span class="btn">➤ Enviar para análise</span></div></div>
+        <div class="box"><b>Anexar documento</b><div class="lbl">Tipo</div><div class="in">▼ selecione</div><div class="lbl">Número</div><div class="in"></div><div class="g2"><div><div class="lbl">Emissão</div><div class="in">dd/mm/aaaa</div></div><div><div class="lbl">Validade *</div><div class="in">dd/mm/aaaa</div></div></div><br><div class="drop">⇪ arraste o PDF aqui</div><br><span class="btn">Anexar</span></div>
+      </div>
+    </div></div>
+  <div class="note" style="right:-60px;top:160px">Hoje os docs chegam por e-mail/WhatsApp. Aqui o próprio parceiro envia.</div>
+</section>
+
+<!-- 4 RESIDUOS -->
+<section class="wf" id="w4"><div class="tag">WF-04 · Resíduos – lançamento da geração semanal</div>
+  <div class="side"><div class="logo">[LOGO]</div><div class="nav">▣ Dashboard</div><div class="nav">▣ Parceiros</div><div class="nav on">▣ Resíduos</div><div class="nav">▣ MTR</div><div class="nav">▣ Financeiro</div></div>
+  <div class="main"><div class="top"><b>Inventário e geração de resíduos</b><span class="pill">Gestor EHS</span></div>
+    <div class="c">
+      <div style="font-size:12px">[ Inventário de resíduos ]  [ <u><b>Geração semanal</b></u> ]</div>
+      <div class="row" style="flex:1">
+        <div class="box" style="flex:2"><b>Lançar semana</b><div class="lbl">Semana (segunda-feira)</div><div class="in" style="width:180px">dd/mm/aaaa</div><br><div class="tbl" id="t4"></div><br><div style="text-align:right"><span class="btn">✓ Salvar lançamento</span></div></div>
+        <div class="box chart"><b>Histórico t/semana</b><div class="x" style="bottom:200px"></div></div>
+      </div>
+    </div></div>
+  <div class="note" style="right:-60px;top:240px">Mostra a semana anterior ao lado para conferência rápida.</div>
+</section>
+
+<!-- 5 MTR -->
+<section class="wf" id="w5"><div class="tag">WF-05 · MTR – emissão do manifesto</div>
+  <div class="side"><div class="logo">[LOGO]</div><div class="nav">▣ Dashboard</div><div class="nav">▣ Parceiros</div><div class="nav">▣ Resíduos</div><div class="nav on">▣ MTR</div><div class="nav">▣ Financeiro</div></div>
+  <div class="main"><div class="top"><b>Manifestos de Transporte de Resíduos</b><span class="pill">Gestor EHS</span></div>
+    <div class="c"><div class="row"><div class="box kpi"><b>Emitidas mês</b></div><div class="box kpi"><b>Aguard. coleta</b></div><div class="box kpi"><b>Em transporte</b></div><div class="box kpi"><b>Com CDF</b></div></div><div class="tbl" id="t5"></div></div></div>
+  <div class="dim"></div>
+  <div class="modal"><b style="font-size:13px">Emitir MTR</b>
+    <div class="box" style="flex:none">Gerador: Montadora (preenchido automaticamente)</div>
+    <div class="g2"><div><div class="lbl">Transportador *</div><div class="in">▼ só homologados</div></div><div><div class="lbl">Destinador *</div><div class="in">▼ só homologados</div></div></div>
+    <div class="box" style="flex:none;border-style:dashed">⚠ aviso se algum documento do parceiro estiver vencido</div>
+    <div class="g2"><div><div class="lbl">Placa</div><div class="in"></div></div><div><div class="lbl">Motorista</div><div class="in"></div></div></div>
+    <div class="tbl" id="t5b"></div><span style="font-size:11px">+ adicionar resíduo</span>
+    <div style="text-align:right"><span class="btn o">Cancelar</span> <span class="btn">Emitir MTR</span></div>
+  </div>
+</section>
+
+<!-- 6 FINANCEIRO -->
+<section class="wf" id="w6"><div class="tag">WF-06 · Financeiro – custos e receitas</div>
+  <div class="side"><div class="logo">[LOGO]</div><div class="nav">▣ Dashboard</div><div class="nav">▣ Parceiros</div><div class="nav">▣ Resíduos</div><div class="nav">▣ MTR</div><div class="nav on">▣ Financeiro</div></div>
+  <div class="main"><div class="top"><b>Custos e receitas com resíduos</b><span class="pill">Gestor EHS</span></div>
+    <div class="c">
+      <div class="row" style="justify-content:space-between;font-size:11px"><span>Competência: [▼ mês]</span><span class="btn">+ Novo lançamento</span></div>
+      <div class="row"><div class="box kpi"><b>Receitas</b></div><div class="box kpi"><b>Custos</b></div><div class="box kpi"><b>Saldo</b></div><div class="box kpi"><b>Custo / t</b></div></div>
+      <div class="row" style="height:170px"><div class="box chart"><b>Receita × custo / mês</b><div class="x"></div></div><div class="box chart"><b>Por categoria</b><div class="x"></div></div></div>
+      <div class="tbl" id="t6"></div>
+    </div></div>
+  <div class="note" style="right:-60px;top:250px">Lançamento pode ser vinculado à MTR → rastreia custo por resíduo.</div>
+</section>
+
+<script>
+const T = (id, cols, n) => { const el = document.getElementById(id) || document.querySelector('#w2 .tbl'); const gc = `grid-template-columns:repeat(${cols.length},1fr)`;
+  el.innerHTML = `<div style="${gc}">${cols.map(c => `<span>${c}</span>`).join('')}</div>` + Array.from({ length: n }, () => `<div style="${gc}">${cols.map((c, i) => `<span>${i === cols.length - 1 ? '[ação]' : '▬▬▬▬'}</span>`).join('')}</div>`).join(''); };
+T('w2x', ['Razão social', 'CNPJ', 'Tipo', 'Documentos', 'Status', ''], 9);
+T('t2b', ['Documento', 'Validade', 'Arquivo', 'Status', '[Aprovar][Reprovar]'], 3);
+T('t3', ['Documento', 'Validade', 'Arquivo', 'Situação', ''], 4);
+T('t4', ['Resíduo', 'Classe', 'Semana anterior', 'Qtd (kg) [___]'], 9);
+T('t5', ['Número', 'Emissão', 'Resíduo', 'Qtd', 'Transp.', 'Destinador', 'Status', ''], 9);
+T('t5b', ['Resíduo ▼', 'Qtd (kg)', 'Acondicionamento', ''], 2);
+T('t6', ['Data', 'Tipo', 'Categoria', 'Descrição', 'Parceiro', 'MTR', 'Valor', ''], 5);
+</script>
+</body></html>
