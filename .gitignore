@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+.venv/
+ciclora.db
+uploads/*
+!uploads/.gitkeep
